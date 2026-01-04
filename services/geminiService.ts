@@ -3,7 +3,8 @@ import { Transaction, Account, Currency, EXCHANGE_RATES, TransactionStatus, Tran
 import { Language } from "../translations";
 
 const getAiClient = () => {
-    const apiKey = process.env.API_KEY;
+    //const apiKey = process.env.API_KEY;
+    const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
     if (!apiKey) throw new Error("API Key missing");
     return new GoogleGenAI({ apiKey });
 };
